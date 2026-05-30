@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clavis Concierge | Premium Lifestyle Management</title>
+    <meta
+      name="description"
+      content="Clavis Concierge by Elizabeth Klyukhina - premium family, business, travel, lifestyle, and executive support services."
+    />
+    <style>
+      :root {
+        --forest: #253131;
+        --sage: #729797;
+        --linen: #ede7dc;
+        --paper: #f8f4ec;
+        --ink: #172222;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--linen);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .serif {
+        font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      }
+
+      .container {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .header {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 10;
+        background: rgb(37 49 49 / 0.62);
+        border-bottom: 1px solid rgb(255 255 255 / 0.08);
+        backdrop-filter: blur(12px);
+      }
+
+      .header-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 86px;
+        gap: 28px;
+      }
+
+      .logo {
+        display: block;
+        height: 70px;
+        width: auto;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        color: rgb(237 231 220 / 0.82);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 46px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid transparent;
+        padding: 0 22px;
+        background: var(--linen);
+        color: var(--forest);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .button.dark {
+        border-color: var(--forest);
+        background: var(--forest);
+        color: var(--linen);
+      }
+
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: grid;
+        align-items: center;
+        overflow: hidden;
+        background: var(--forest);
+        color: var(--linen);
+        padding: 132px 0 76px;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(120deg, rgb(0 0 0 / 0.46), rgb(37 49 49 / 0.24), rgb(0 0 0 / 0.42)),
+          url("public/hero-bg.jpg") center / cover;
+      }
+
+      .hero-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 470px);
+        gap: 64px;
+        align-items: center;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 720px;
+        font-size: clamp(58px, 9vw, 120px);
+        font-weight: 300;
+        line-height: 0.98;
+      }
+
+      .hero-copy {
+        max-width: 540px;
+        margin-top: 34px;
+        color: rgb(237 231 220 / 0.78);
+        font-size: 20px;
+        line-height: 1.7;
+      }
+
+      .eyebrow {
+        margin-bottom: 18px;
+        color: rgb(237 231 220 / 0.62);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+
+      .contact-card {
+        border: 1px solid rgb(237 231 220 / 0.18);
+        background: rgb(237 231 220 / 0.11);
+        padding: clamp(28px, 4vw, 44px);
+        backdrop-filter: blur(12px);
+      }
+
+      .contact-card h2 {
+        font-size: 36px;
+        font-weight: 300;
+      }
+
+      .contact-card p {
+        margin-top: 10px;
+        color: rgb(237 231 220 / 0.68);
+        line-height: 1.5;
+      }
+
+      form {
+        display: grid;
+        gap: 20px;
+        margin-top: 32px;
+      }
+
+      label {
+        display: grid;
+        gap: 8px;
+        color: rgb(237 231 220 / 0.62);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid rgb(237 231 220 / 0.34);
+        border-radius: 0;
+        background: transparent;
+        color: var(--linen);
+        font: inherit;
+        padding: 12px 0;
+        outline: none;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: rgb(237 231 220 / 0.44);
+      }
+
+      textarea {
+        min-height: 105px;
+        resize: vertical;
+      }
+
+      .section {
+        padding: 96px 0;
+      }
+
+      .about {
+        background: var(--linen);
+        color: var(--forest);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 470px);
+        gap: 64px;
+        align-items: start;
+      }
+
+      .section .eyebrow {
+        color: rgb(37 49 49 / 0.6);
+      }
+
+      .section h2 {
+        max-width: 780px;
+        font-size: clamp(42px, 6vw, 72px);
+        font-weight: 300;
+        line-height: 1.04;
+      }
+
+      .body-copy {
+        display: grid;
+        gap: 20px;
+        margin-top: 34px;
+        color: rgb(37 49 49 / 0.78);
+        font-size: 18px;
+        line-height: 1.75;
+      }
+
+      .portrait {
+        width: 100%;
+        aspect-ratio: 479 / 540;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      .services {
+        background: var(--forest);
+        color: var(--linen);
+      }
+
+      .services .eyebrow {
+        color: rgb(237 231 220 / 0.62);
+      }
+
+      .services-intro {
+        max-width: 720px;
+        margin-top: 22px;
+        color: rgb(237 231 220 / 0.72);
+        font-size: 18px;
+        line-height: 1.65;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 52px;
+      }
+
+      .service-card {
+        min-height: 230px;
+        border: 1px solid rgb(237 231 220 / 0.16);
+        padding: 28px;
+      }
+
+      .service-card h3 {
+        font-size: 28px;
+        font-weight: 300;
+        line-height: 1.1;
+      }
+
+      .service-card p {
+        margin-top: 18px;
+        color: rgb(237 231 220 / 0.7);
+        line-height: 1.6;
+      }
+
+      footer {
+        background: var(--linen);
+        color: rgb(37 49 49 / 0.62);
+        padding: 26px 0;
+        font-size: 14px;
+      }
+
+      .footer-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .toast {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        z-index: 20;
+        display: none;
+        max-width: 340px;
+        background: var(--paper);
+        color: var(--forest);
+        box-shadow: 0 18px 40px rgb(0 0 0 / 0.2);
+        padding: 18px 20px;
+        line-height: 1.5;
+      }
+
+      .toast.show {
+        display: block;
+      }
+
+      @media (max-width: 900px) {
+        .nav {
+          display: none;
+        }
+
+        .hero-grid,
+        .about-grid,
+        .service-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 120px;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .container {
+          width: min(100% - 28px, 1180px);
+        }
+
+        .header-row {
+          min-height: 74px;
+        }
+
+        .logo {
+          height: 58px;
+        }
+
+        h1 {
+          font-size: 52px;
+        }
+
+        .hero-copy,
+        .body-copy,
+        .services-intro {
+          font-size: 16px;
+        }
+
+        .section {
+          padding: 72px 0;
+        }
+
+        .footer-row {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-row">
+        <a href="#contacts" aria-label="Clavis Concierge home">
+          <img class="logo" src="public/logo.png" alt="Clavis" />
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contacts">Contacts</a>
+          <a class="button" href="https://zcal.co/elizavetaklyukhina/30min" target="_blank" rel="noopener">Book a call</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="contacts">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">By Elizabeth Klyukhina</p>
+            <h1 class="serif">Luxury Lifestyle Support</h1>
+            <p class="hero-copy">
+              Experience thoughtful personal assistance tailored to your lifestyle. We handle the details so you can focus on what matters most.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <h2 class="serif">Get in Touch</h2>
+            <p>Start your journey to calmer, more structured living.</p>
+            <form id="contact-form">
+              <label>
+                Name
+                <input name="name" placeholder="Your name" autocomplete="name" required />
+              </label>
+              <label>
+                Email
+                <input name="email" type="email" placeholder="your@email.com" autocomplete="email" required />
+              </label>
+              <label>
+                Phone
+                <input name="phone" type="tel" placeholder="0000000000" autocomplete="tel" required />
+              </label>
+              <label>
+                Message
+                <textarea name="message" placeholder="How can we assist you?" required></textarea>
+              </label>
+              <button class="button" type="submit">Contact a Manager</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="container about-grid">
+          <div>
+            <p class="eyebrow">About Us</p>
+            <h2 class="serif">Unlocking Your Ultimate Luxury: Time</h2>
+            <div class="body-copy">
+              <p>Hello, I am Liz, founder of <strong>Clavis Concierge</strong>.</p>
+              <p>We take on the mental load of visionaries, executives, and discerning families so you can focus on what truly matters.</p>
+              <p>We act as your behind-the-scenes operational partner, combining business structure with AI-enhanced systems to manage life and enterprise smoothly.</p>
+              <p><a class="button dark" href="#services">Discover Our Services</a></p>
+            </div>
+          </div>
+          <img class="portrait" src="public/about-liz.png" alt="Liz, founder of Clavis Concierge" />
+        </div>
+      </section>
+
+      <section class="section services" id="services">
+        <div class="container">
+          <p class="eyebrow">Services</p>
+          <h2 class="serif">How We Support You</h2>
+          <p class="services-intro">Delegate with confidence across specialised areas of executive, lifestyle, household, travel, and digital operations.</p>
+          <div class="service-grid">
+            <article class="service-card">
+              <h3 class="serif">Executive Support</h3>
+              <p>Calendar management, meeting coordination, reminders, task trackers, documents, follow-ups, and daily operational support.</p>
+            </article>
+            <article class="service-card">
+              <h3 class="serif">AI-Enhanced Operations</h3>
+              <p>Prompt templates, concise briefings, AI-assisted research, knowledge bases, and repeatable workflows for recurring tasks.</p>
+            </article>
+            <article class="service-card">
+              <h3 class="serif">Digital Organisation</h3>
+              <p>Notion spaces, databases, dashboards, Google Drive structures, forms, simple CRM systems, and digital project coordination.</p>
+            </article>
+            <article class="service-card">
+              <h3 class="serif">Research & Intelligence</h3>
+              <p>Market research, supplier sourcing, contractor comparisons, location research, review analysis, and structured recommendations.</p>
+            </article>
+            <article class="service-card">
+              <h3 class="serif">Travel Planning</h3>
+              <p>Flight and hotel research, itineraries, transfers, reservations, travel documents, activities, budgets, and live coordination.</p>
+            </article>
+            <article class="service-card">
+              <h3 class="serif">Lifestyle Operations</h3>
+              <p>Appointments, bookings, family schedules, household administration, service sourcing, gift coordination, and personal trackers.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-row">
+        <span>By Elizabeth Klyukhina</span>
+        <span>Clavis Concierge</span>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+      Thank you. Your message is ready for the next connected contact workflow.
+    </div>
+
+    <script>
+      const form = document.querySelector("#contact-form");
+      const toast = document.querySelector("#toast");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        form.reset();
+        toast.classList.add("show");
+        window.setTimeout(() => toast.classList.remove("show"), 4200);
+      });
+    </script>
+  </body>
+</html>
