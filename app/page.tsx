@@ -4,6 +4,7 @@ import { AnimatedText } from "@/components/animated-text"
 import { ContactForm } from "@/components/contact-form"
 import { DelayedReveal } from "@/components/delayed-reveal"
 import { HeroSheetReveal } from "@/components/hero-sheet-reveal"
+import { sitePath } from "@/lib/site-path"
 
 const services = [
   {
@@ -213,7 +214,7 @@ export default function Home() {
           {/* Hero Background Image */}
           <div className="absolute inset-0 z-0 overflow-hidden bg-[#253131]">
             <Image
-              src="/hero-bg.jpg"
+              src={sitePath("/hero-bg.jpg")}
               alt=""
               fill
               className="hero-reveal-image object-cover object-center"
@@ -306,7 +307,7 @@ export default function Home() {
 
               <div>
                 <img
-                  src="/about-liz.png"
+                  src={sitePath("/about-liz.png")}
                   alt="Liz, founder of Clavis Concierge"
                   className="block aspect-[479/540] w-full object-cover object-top"
                 />

@@ -11,7 +11,7 @@ export function HeroSheetReveal() {
     if (prefersReducedMotion.matches || !shell || !about) return
 
     const root = document.documentElement
-    const aboutImage = about.querySelector<HTMLImageElement>('img[src="/about-liz.png"]')
+    const aboutImage = about.querySelector<HTMLImageElement>('img[src$="/about-liz.png"]')
     const aboutImageRevealDuration = 3600
     let frame = 0
     let typewriterFrame = 0

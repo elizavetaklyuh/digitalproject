@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { sitePath } from "@/lib/site-path"
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -97,7 +98,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center group py-2">
             <Image
-              src="/logo.png"
+              src={sitePath("/logo.png")}
               alt="Clavis"
               width={200}
               height={80}

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { sitePath } from '@/lib/site-path'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({ 
@@ -26,19 +27,19 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: sitePath('/icon-light-32x32.png'),
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: sitePath('/icon-dark-32x32.png'),
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
+        url: sitePath('/icon.svg'),
         type: 'image/svg+xml',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: sitePath('/apple-icon.png'),
   },
 }
 
