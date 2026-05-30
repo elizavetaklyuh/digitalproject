@@ -36,6 +36,25 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Ensure Pages uses GitHub Actions
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          api="https://api.github.com/repos/${GITHUB_REPOSITORY}/pages"
+          headers=(
+            -H "Accept: application/vnd.github+json"
+            -H "Authorization: Bearer ${GITHUB_TOKEN}"
+            -H "X-GitHub-Api-Version: 2022-11-28"
+          )
+          status="$(curl -sS -o /tmp/pages.json -w "%{http_code}" "${headers[@]}" "${api}")"
+
+          if [ "${status}" = "200" ]; then
+            curl -sS -X PUT "${headers[@]}" "${api}" -d '{"build_type":"workflow"}'
+          else
+            curl -sS -X POST "${headers[@]}" "${api}" -d '{"build_type":"workflow"}'
+          fi
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
