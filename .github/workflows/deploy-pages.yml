@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -62,6 +62,22 @@ jobs:
         run: pnpm build
         env:
           NEXT_PUBLIC_SITE_BASE_PATH: /digitalproject
+
+      - name: Prepare Pages files
+        run: touch ./out/.nojekyll
+
+      - name: Push static site to gh-pages
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          cd out
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b gh-pages
+          git add -A
+          git commit -m "Deploy static site"
+          git push --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
