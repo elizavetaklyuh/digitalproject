@@ -1,0 +1,7 @@
+:HL["/digitalproject/_next/static/chunks/0.7_wg1k3b4im.css","style"]
+:HL["/digitalproject/_next/static/chunks/0zik9k.y1_0jx.css","style"]
+:HL["/digitalproject/_next/static/media/01e4147cff8141ee-s.p.10ked.7w885.g.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/digitalproject/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/digitalproject/hero-bg.svg","image"]
+:HL["/digitalproject/about-liz.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"o0ud7NZCIyoPaflOYlpTa"}
