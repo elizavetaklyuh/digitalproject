@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { sitePath } from "@/lib/site-path"
@@ -97,16 +96,13 @@ export function Header() {
         <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
           <Link href="/" className="flex items-center group py-2">
-            <Image
-              src={sitePath("/logo.png")}
+            <img
+              src={sitePath("/logo.svg")}
               alt="Clavis"
-              width={200}
-              height={80}
               className={cn(
                 "h-16 lg:h-20 w-auto transition-all duration-300 group-hover:opacity-80",
                 isOnLightBackground && "brightness-0"
               )}
-              priority
             />
           </Link>
 
