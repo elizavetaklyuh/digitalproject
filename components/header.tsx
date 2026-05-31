@@ -87,7 +87,7 @@ export function Header() {
         "site-header fixed top-0 left-0 right-0 w-full z-50 px-6 transition-all duration-500 ease-out lg:px-12",
         isOnLightBackground
           ? "bg-[#ede7dc]/72 border-b border-[#253131]/10 text-[#253131] backdrop-blur-[12px]"
-          : "bg-[#253131]/50 border-b border-white/5 text-foreground backdrop-blur-[12px]",
+          : "bg-[#300450]/50 border-b border-white/5 text-foreground backdrop-blur-[12px]",
         isScrolled && "shadow-lg shadow-black/10"
       )}
       style={{ backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
@@ -145,7 +145,7 @@ export function Header() {
       <div
         className={cn(
           "lg:hidden fixed inset-x-0 top-20 px-6 backdrop-blur-xl border-b transition-all duration-300 overflow-hidden",
-          isOnLightBackground ? "bg-[#ede7dc]/95 border-[#253131]/10" : "bg-[#253131]/70 border-white/5",
+          isOnLightBackground ? "bg-[#ede7dc]/95 border-[#253131]/10" : "bg-[#300450]/70 border-white/5",
           isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         )}
       >

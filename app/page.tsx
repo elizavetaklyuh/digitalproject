@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Header } from "@/components/header"
 import { AnimatedText } from "@/components/animated-text"
 import { ContactForm } from "@/components/contact-form"
@@ -210,22 +209,20 @@ export default function Home() {
 
       <div className="layered-reveal-shell">
         {/* Hero Section */}
-        <section className="hero-layer-sheet relative flex min-h-screen items-center overflow-hidden bg-[#253131] px-6 pt-20 lg:px-12 lg:pt-24" id="contacts">
+        <section className="hero-layer-sheet relative flex min-h-screen items-center overflow-hidden bg-[#300450] px-6 pt-20 lg:px-12 lg:pt-24" id="contacts">
           {/* Hero Background Image */}
-          <div className="absolute inset-0 z-0 overflow-hidden bg-[#253131]">
-            <Image
-              src={sitePath("/hero-bg.jpg")}
+          <div className="absolute inset-0 z-0 overflow-hidden bg-[#300450]">
+            <img
+              src={sitePath("/hero-bg.svg")}
               alt=""
-              fill
-              className="hero-reveal-image object-cover object-center"
-              priority
-              quality={90}
+              className="hero-reveal-image block h-full w-full object-cover object-center"
+              aria-hidden="true"
             />
             {/* Soft dark overlay for text readability */}
             <div className="absolute inset-0 z-10 bg-gradient-to-br from-black/30 via-black/20 to-black/40" />
             {/* Subtle color blend overlay */}
-            <div className="absolute inset-0 z-10 bg-gradient-to-tr from-[#253131]/30 to-transparent mix-blend-multiply" />
-            <div className="hero-reveal-splash absolute inset-0 z-20 bg-[#253131]" />
+            <div className="absolute inset-0 z-10 bg-gradient-to-tr from-[#300450]/30 to-transparent mix-blend-multiply" />
+            <div className="hero-reveal-splash absolute inset-0 z-20 bg-[#300450]" />
           </div>
 
           <div className="container mx-auto">
